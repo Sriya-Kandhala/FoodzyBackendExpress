@@ -5,12 +5,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({origin: "https://foodzy-frontend.vercel.app"}));
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.send("Backend is running on Vercel ✅");
-// });
 
 app.use("/api/v1/products", router);
 app.use("/images", express.static("images"));
