@@ -5,20 +5,10 @@ import { authenticate } from "./authentication.js";
 //creating a new router instance
 const router = express.Router();
 
-//defining a route for getting all products
-// router.get("/getAll",getAllProducts);
-// router.get("/getById/:id", getProductById);
-// router.post("/save", createProduct);
-// router.post("/saveall", createProducts);
-// router.delete("/deleteById/:id", deleteProductById);
-
-
 router.post("/register",registerUser );
 router.post("/login", loginController);
 
 router.use(authenticate);
-
-
 
 router.post("/veg", createVegProdcuts);
 router.get("/getVeg", getAllVegProducts);
