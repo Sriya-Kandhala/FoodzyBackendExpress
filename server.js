@@ -8,9 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Backend is running on Vercel ✅");
-});
+// app.get("/", (req, res) => {
+//   res.send("Backend is running on Vercel ✅");
+// });
 
 app.use("/api/v1/products", router);
 app.use("/images", express.static("images"));
