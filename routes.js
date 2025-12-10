@@ -11,7 +11,7 @@ router.post("/veg", createVegProdcuts);
 router.get("/getVeg", getAllVegProducts);
 
 
-router.use(authenticate);
+// router.use(authenticate);
 
 router.post("/nonveg", createNonVegProdcuts);
 router.get("/getNonVeg", getAllNonVegProducts);
