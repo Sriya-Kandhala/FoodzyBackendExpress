@@ -7,10 +7,10 @@ const router = express.Router();
 
 router.post("/register",registerUser );
 router.post("/login", loginController);
+router.post("/veg", createVegProdcuts);
 
 router.use(authenticate);
 
-router.post("/veg", createVegProdcuts);
 router.get("/getVeg", getAllVegProducts);
 router.post("/nonveg", createNonVegProdcuts);
 router.get("/getNonVeg", getAllNonVegProducts);
