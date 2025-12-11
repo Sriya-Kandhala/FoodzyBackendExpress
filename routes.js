@@ -7,12 +7,12 @@ const router = express.Router();
 
 router.post("/register",registerUser );
 router.post("/login", loginController);
+
+
+
+router.use(authenticate);
 router.post("/veg", createVegProdcuts);
 router.get("/getVeg", getAllVegProducts);
-
-
-// router.use(authenticate);
-
 router.post("/nonveg", createNonVegProdcuts);
 router.get("/getNonVeg", getAllNonVegProducts);
 router.post("/desserts", createDessertProducts);
