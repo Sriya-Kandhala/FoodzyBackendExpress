@@ -2,39 +2,6 @@
 
 import { addBeverages, addDessertProducts, addNonVegProducts, addVegProducts, createNewOrder, createUser, fetchAllBeveragesProducts, fetchAllDessertProducts, fetchAllNonVegProducts, fetchAllVegProducts, fetchOrders, loginService } from "./service.js";
 
-// const getAllProducts =async(req,res) => {
-   
-//     const products = await fetchAllProducts();
-//     res.send(products);
-// }
-
-// const getProductById = async(req, res)=>{
-//     //extract the id parameter from the request
-
-//     let id = parseInt(req.params.id);
-//     //calling the service function to get the product by id i/p
-//     let product = await fetchProductById(id);
-//     //send the product as response
-//     res.send(product);
-// }
-
-// const createProduct = async(req, res)=>{
-//      let newProduct = req.body;
-//      addProduct(newProduct);
-//      res.send("product saved successfully");
-// }
-
-// const createProducts = async(req, res)=>{
-//     let newProducts = req.body;
-//     addProducts(newProducts);
-//     res.send("products saved successfully");
-// }
-
-// const deleteProductById = async(req,res)=>{
-//     let id = parseInt(req.params.id);
-//    await deleteProduct(id);
-//     res.send(`product with ${id} is deleted`);
-// }
 
 const createVegProdcuts = async(req,res)=>{
     let newVegProducts = req.body;

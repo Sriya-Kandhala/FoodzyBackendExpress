@@ -13,20 +13,7 @@ const BeveragesModel = mongoose.model("beverages", ProductSchema)
 const orderModel = mongoose.model("order", orderSchema)
 const registrationModel = mongoose.model("registrationdetail", registerSchema)
 
-// const fetchAllProducts =  async()=>{ 
-    
-//     return await ProductModel.find();
 
-// }
-
-// const fetchProductById = async (id) => {
-//     return await ProductModel.findOne({ id: id });
-// }
-
-
-// const deleteProduct = async(id) => {
-//     await ProductModel.deleteOne({id:id});
-// }
 
 const addVegProducts = async(newVegProducts)=>{
         await ProductModel1.insertMany(newVegProducts)
