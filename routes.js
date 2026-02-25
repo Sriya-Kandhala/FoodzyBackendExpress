@@ -9,8 +9,6 @@ router.post("/register",registerUser );
 router.post("/login", loginController);
 
 
-
-router.use(authenticate);
 router.post("/veg", createVegProdcuts);
 router.get("/getVeg", getAllVegProducts);
 router.post("/nonveg", createNonVegProdcuts);
@@ -19,6 +17,8 @@ router.post("/desserts", createDessertProducts);
 router.get("/getDesserts", getAllDessertProducts);
 router.post("/beverages", createBeverageProducts);
 router.get("/getBeverages", getAllBeveragesProdcuts);
+
+router.use(authenticate);
 
 router.post("/orders", createOrder);
 router.get("/orders", getOrders);
