@@ -58,14 +58,13 @@ const fetchAllBeveragesProducts = async()=>{
 
 
 //orders
-const createNewOrder = async(orderDetails)=>{
-    await orderModel(orderDetails).save();
-}
+const createNewOrder = async (orderDetails) => {
+  await orderModel.create(orderDetails);
+};
 
-const fetchOrders = async()=>{
-    return await orderModel.find();
-}
-
+const fetchOrders = async (userId) => {
+  return await orderModel.find({ userId }).sort({ createdAt: -1 });
+};
 //registration
 const createUser = async(user)=>{
     await registrationModel(user).save();

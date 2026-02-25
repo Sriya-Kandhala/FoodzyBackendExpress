@@ -51,17 +51,41 @@ const getAllBeveragesProdcuts = async(req, res)=>{
     res.send(products);
 }
 
-const createOrder = async(req,res)=>{
-    let orderDetails = req.body;
-    createNewOrder(orderDetails);
-    res.send("order created successfully");
-}
+const createOrder = async (req, res) => {
+  try {
+    const orderDetails = {
+      ...req.body,
+      userId: req.user.id, // 🔥 get user from JWT
+    };
 
-const getOrders = async(req,res)=>{
-    const orderProducts = await fetchOrders();
-    res.send(orderProducts);
-}
+    await createNewOrder(orderDetails);
 
+    res.status(201).json({
+      success: true,
+      message: "Order created successfully",
+    });
+  } catch (error) {
+    console.error("Create order error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to create order",
+    });
+  }
+};
+
+const getOrders = async (req, res) => {
+  try {
+    const orderProducts = await fetchOrders(req.user.id);
+
+    res.status(200).json(orderProducts);
+  } catch (error) {
+    console.error("Fetch orders error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to fetch orders",
+    });
+  }
+};
 
 const registerUser = async(req,res)=>{
     let user = req.body;
